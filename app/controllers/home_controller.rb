@@ -8,7 +8,8 @@ class HomeController < ApplicationController
     @filing_id = params[:id]
     @filing = Fech::Filing.new(@filing_id)
     @filing.download
-    @itemizations = @filing.rows_like(/params[:sked]/)
+    @sked = params[:sked]
+    @itemizations = @filing.rows_like(Regexp.new(@sked))
 
     respond_to do |format|
       format.html
