@@ -1,0 +1,23 @@
+<h1>Today's Filings</h1>
+
+<table>
+  <tr>
+    <th>Committee</th>
+    <th>Report title</th>
+    <th>Form type</th>
+    <th>Amended</th>
+    <th>Schedule A</th>
+    <th>Schedule B</th>
+  </tr>
+
+<% @fec_filings.each do |fec_filing| %>
+  <tr>
+    <td><%= fec_filing.committee_name %></td>
+    <td><%= link_to fec_filing.report_title, fec_filing.fec_uri %></td>
+    <td><%= fec_filing.form_type %></td>
+    <td><%= fec_filing.amended %></td>
+    <td><%= link_to fec_filing.receipts_total, skeds_path(fec_filing.filing_id, skeda_for_form_type(fec_filing)) if skeda_for_form_type(fec_filing) %></td>
+    <td><%= link_to fec_filing.disbursements_total, skeds_path(fec_filing.filing_id, skedb_for_form_type(fec_filing)) if skedb_for_form_type(fec_filing) %></td>
+  </tr>
+<% end %>
+</table>
