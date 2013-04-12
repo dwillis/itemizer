@@ -19,8 +19,8 @@
       <td><%= item[:entity_type] %></td>
       <td><%= item[:payee_organization_name] %></td>
       <td><%= "#{item[:payee_last_name]}, #{item[:payee_first_name]} #{item[:payee_middle_name]}" if item[:payee_last_name] %></td>
-      <td><%= item[:expenditure_date] %></td>
-      <td><%= item[:expenditure_amount] %></td>
+      <td><%= display_date(item[:expenditure_date]) %></td>
+      <td><%= number_with_delimiter(item[:expenditure_amount]) %></td>
       <td><%= item[:expenditure_purpose_descrip] %></td>
     </tr>
   <% end %>

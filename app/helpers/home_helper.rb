@@ -14,4 +14,12 @@ module HomeHelper
     end
   end
   
+  def display_date(date)
+    begin
+      Date.parse(date)
+    rescue
+      date
+    end
+  end
+  
 end
