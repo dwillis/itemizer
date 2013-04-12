@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Form type</th>
+      <th>Candidate (Office)</th>
+      <th>Position</th>
+      <th>Payee name</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @itemizations.each do |item| %>
+    <tr>
+      <td id="<%= item[:transaction_id_number] %>"><a href="#<%= item[:transaction_id_number] %>">#</a></td>
+      <td><%= item[:form_type] %></td>
+      <td><%= display_candidate_office(item) %></td>
+      <td><%= display_position(item) %></td>
+      <td><%= display_payee(item) %></td>
+      <td><%= display_date(item[:expenditure_date]) %></td>
+      <td><%= number_with_delimiter(item[:expenditure_amount]) %></td>
+      <td><%= item[:expenditure_purpose_descrip] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

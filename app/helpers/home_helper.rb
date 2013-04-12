@@ -11,6 +11,8 @@ module HomeHelper
       'sb'
     elsif filing.form_type == 'F24'
       'se'
+    elsif filing.form_type == 'F5'
+      'se'
     end
   end
   
@@ -30,12 +32,33 @@ module HomeHelper
     end
   end
   
+  def display_candidate_office(item)
+    if item[:candidate_office] == 'H'
+      "#{item[:candidate_last_name]}, #{item[:candidate_first_name]} (#{item[:candidate_state]}-#{item[:candidate_district]})"
+    elsif item[:candidate_office] == 'S'
+      "#{item[:candidate_last_name]}, #{item[:candidate_first_name]} (#{item[:candidate_state]}-#{item[:candidate_district]})"
+    else
+      "#{item[:candidate_last_name]}, #{item[:candidate_first_name]} (P)"
+    end
+  end
+  
   def display_date(date)
     begin
       Date.parse(date)
     rescue
       date
     end
+  end
+  
+  def display_position(item)
+    if item[:support_oppose_code] == 'S'
+      "Support"
+    elsif item[:support_oppose_code] == 'O'
+      "Oppose"
+    else
+      "Not Listed"
+    end
+    
   end
   
 end
