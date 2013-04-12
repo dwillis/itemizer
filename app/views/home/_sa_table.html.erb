@@ -13,7 +13,7 @@
   <tbody>
   <% @itemizations.each do |item| %>
     <tr>
-      <td id="<%= item[:transaction_id_number] %>"><a href="#<%= item[:transaction_id_number] %>">#</a></td>
+      <td id="<%= item[:transaction_id] %>"><a href="#<%= item[:transaction_id] %>">#</a></td>
       <td><%= item[:form_type] %></td>
       <td><%= item[:entity_type] %></td>
       <td><%= display_donor(item) %></td>
