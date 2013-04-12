@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'campaign_cash', "~> 2.6.1"
 gem 'fech'
+gem 'american_date'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'pg'
