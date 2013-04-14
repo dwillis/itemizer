@@ -30,3 +30,6 @@ var hashChange = function() {
  
 $(window).on("hashchange",hashChange);
 hashChange();
+
+$(window).on("load",hashChange);
+hashChange();
