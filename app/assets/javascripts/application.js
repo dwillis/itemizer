@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+var hashChange = function() {
+    var el = document.getElementById(window.location.hash.substr(1));
+    $(".activeTr").removeClass("activeTr").find("td").css({
+        "background":"",
+        "color":""
+    });
+    
+    $(el).parent().addClass("activeTr").find("td").css({
+        "background":"#08c",
+        "color":"#fff"
+    });
+}
+ 
+$(window).on("hashchange",hashChange);
+hashChange();
