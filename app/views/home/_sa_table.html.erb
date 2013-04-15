@@ -5,6 +5,7 @@
       <th>Form type</th>
       <th>Entity Type</th>
       <th>Donor name</th>
+      <th>State</th>
       <th>Date</th>
       <th>Amount</th>
       <th>Employer</th>
@@ -17,6 +18,7 @@
       <td><%= item[:form_type] %></td>
       <td><%= item[:entity_type] %></td>
       <td><%= display_donor(item) %></td>
+      <td><%= item[:contributor_state] %></td>
       <td><%= display_date(item[:contribution_date]) %></td>
       <td><%= number_with_delimiter(item[:contribution_amount]) %></td>
       <td><%= item[:contributor_employer] %></td>
