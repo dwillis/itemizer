@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Form type</th>
+      <th>Entity Type</th>
+      <th>Donor name</th>
+      <th>State</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Employer</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @itemizations.each do |item| %>
+    <tr>
+      <td id="<%= item[:transaction_id] %>"><a href="#<%= item[:transaction_id] %>">#</a></td>
+      <td><%= item[:form_type] %></td>
+      <td><%= item[:entity_type] %></td>
+      <td><%= display_donor(item) %></td>
+      <td><%= item[:contributor_state] %></td>
+      <td><%= display_date(item[:contribution_date]) %></td>
+      <td><%= number_with_delimiter(item[:contribution_amount]) %></td>
+      <td><%= item[:contributor_employer] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

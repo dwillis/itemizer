@@ -3,6 +3,8 @@ module HomeHelper
   def skeda_for_form_type(filing)
     if filing.form_type == 'F3'
       'sa'
+    elsif filing.form_type == 'F6'
+      'f65'
     end
   end
   
@@ -59,6 +61,14 @@ module HomeHelper
       "Not Listed"
     end
     
+  end
+  
+  def build_link(fec_filing, sked)
+    if sked == 'a'
+      link_to number_with_delimiter(fec_filing.receipts_total || 0), skeds_path(fec_filing.filing_id, skeda_for_form_type(fec_filing)) if skeda_for_form_type(fec_filing)
+    elsif sked == 'b'
+      link_to number_with_delimiter(fec_filing.disbursements_total), skeds_path(fec_filing.filing_id, skedb_for_form_type(fec_filing)) if skedb_for_form_type(fec_filing)
+    end
   end
   
 end
