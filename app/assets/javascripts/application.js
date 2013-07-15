@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery-tablesorter
 //= require_tree .
 
 var hashChange = function() {
@@ -33,3 +34,7 @@ hashChange();
 
 $(window).on("load",hashChange);
 hashChange();
+
+$(document).ready(function() {
+  $("table").tablesorter();
+});
