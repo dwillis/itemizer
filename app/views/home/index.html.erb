@@ -1,15 +1,19 @@
 <h1>Today's Filings</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>Committee</th>
-    <th>Report title</th>
-    <th>Form type</th>
-    <th>End Date</th>
-    <th>Amendment</th>
-    <th>Receipts</th>
-    <th>Spending</th>
-  </tr>
+<table class="table table-striped tablesorter-blue">
+  <thead>
+    <tr>
+      <th>Committee</th>
+      <th>Report title</th>
+      <th>Form type</th>
+      <th>End Date</th>
+      <th>Amendment</th>
+      <th>Receipts</th>
+      <th>Spending</th>
+    </tr>
+  </thead>
+
+  <tbody>
 
 <% @fec_filings.each do |fec_filing| %>
   <tr>
@@ -22,4 +26,6 @@
     <td><%= build_link(fec_filing, 'b') %></td>
   </tr>
 <% end %>
+
+  </tbody>
 </table>

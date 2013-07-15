@@ -18,4 +18,5 @@ group :assets do
   gem 'sass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-rails'
+  gem 'jquery-tablesorter'
 end
