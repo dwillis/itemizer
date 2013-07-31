@@ -114,7 +114,7 @@ PLATFORMS
 DEPENDENCIES
   american_date
   bootstrap-sass
-  campaign_cash (~> 2.6.1)
+  campaign_cash (~> 2.6.2)
   fech
   jquery-rails
   jquery-tablesorter
