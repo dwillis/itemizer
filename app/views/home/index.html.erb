@@ -1,5 +1,6 @@
 <h1>Today's Filings</h1>
 
+<h5><%= link_to "<<<", date_path(@yesterday.year, @yesterday.month, @yesterday.day) %> | <%= link_to ">>>", date_path(@tomorrow.year, @tomorrow.month, @tomorrow.day) %></h5>
 <table class="table table-striped tablesorter-blue">
   <thead>
     <tr>
