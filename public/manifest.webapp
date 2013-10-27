@@ -1,0 +1,13 @@
+{
+  "name": "Itemizer",
+  "description": "Track electronic filings from the Federal Election Commission",
+  "launch_path": "/",
+  "icons": {
+    "128": "/images/icon-128.png"
+  },
+  "developer": {
+    "name": "Derek Willis",
+    "url": "http://thescoop.org"
+  },
+  "default_locale": "en"
+}
