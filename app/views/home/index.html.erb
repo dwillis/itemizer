@@ -1,32 +1,5 @@
 <h1>Today's Filings</h1>
 
-<button id="install">
-  Install this awesome app on your homescreen!
-</button>
- 
-<script>
-(function(){
-  function install(ev) {
-    ev.preventDefault();
-    // define the manifest URL
-    var manifest_url = "http://itemizer.herokuapp.com/manifest.webapp";
-    // install the app
-    var myapp = navigator.mozApps.install(manifest_url);
-    myapp.onsuccess = function(data) {
-      // App is installed, remove button
-      this.parentNode.removeChild(this);
-    };
-    myapp.onerror = function() {
-      // App wasn't installed, info is in this.error.name
-      console.log('Install failed, error: ' + this.error.name);
-     };
-  };
-  // get a reference to the button and call install() on click
-  var button = document.getElementById('install');
-  button.addEventListener('click', install, false);
-})();
-</script>
-
 <h5><%= link_to "<<<", date_path(@yesterday.year, @yesterday.month, @yesterday.day) %> | <%= link_to ">>>", date_path(@tomorrow.year, @tomorrow.month, @tomorrow.day) %></h5>
 <table class="table table-striped tablesorter-blue">
   <thead>
@@ -57,3 +30,30 @@
 
   </tbody>
 </table>
+
+<button id="install">
+  Install on Firefox home screen
+</button>
+ 
+<script>
+(function(){
+  function install(ev) {
+    ev.preventDefault();
+    // define the manifest URL
+    var manifest_url = "http://itemizer.herokuapp.com/manifest.webapp";
+    // install the app
+    var myapp = navigator.mozApps.install(manifest_url);
+    myapp.onsuccess = function(data) {
+      // App is installed, remove button
+      this.parentNode.removeChild(this);
+    };
+    myapp.onerror = function() {
+      // App wasn't installed, info is in this.error.name
+      console.log('Install failed, error: ' + this.error.name);
+     };
+  };
+  // get a reference to the button and call install() on click
+  var button = document.getElementById('install');
+  button.addEventListener('click', install, false);
+})();
+</script>
