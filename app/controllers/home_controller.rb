@@ -30,7 +30,7 @@ class HomeController < ApplicationController
   
   def manifest
     render :json => { "name" => "Itemizer", "description" => "Track electronic filings from the Federal Election Commission", "launch_path" =>"/", "icons" => {
-    "128" => "http://forjournalists.com/media/icon-128.png", "64"=> "http://forjournalists.com/media/icon-64.png" }, "developer"=> { "name"=> "Derek Willis", 
+    "128" => "http://forjournalists.com/media/icon-128.png", "60"=> "http://forjournalists.com/media/icon-64.png" }, "developer"=> { "name"=> "Derek Willis", 
     "url"=> "http://thescoop.org" }, "default_locale"=> "en" }, :content_type => 'application/x-web-app-manifest+json'
   end
   
