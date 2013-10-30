@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 
   def show
     @filing_id = params[:id]
-    @filing = Fech::Filing.new(@filing_id)
+    @filing = Fech::Filing.new(@filing_id, :csv_parser => Fech::CsvDoctor)
     @filing.download
     @sked = params[:sked]
     @line = params[:line].to_s
