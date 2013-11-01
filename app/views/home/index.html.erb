@@ -19,10 +19,10 @@
 <% @fec_filings.each do |fec_filing| %>
   <tr>
     <td><%= fec_filing.committee_name %></td>
-    <td><%= link_to fec_filing.report_title, fec_filing.fec_uri %></td>
+    <td><%= link_to fec_filing.report_title, fec_filing.fec_uri, :target => "_blank" %></td>
     <td><%= fec_filing.form_type %></td>
     <td><%= fec_filing.date_coverage_to %></td>
-    <td><%= link_to("compare", "http://comparinator.herokuapp.com/fec_filings/#{fec_filing.original_filing}/#{fec_filing.filing_id}") if fec_filing.is_amendment %></td>
+    <td><%= link_to("compare", "http://comparinator.herokuapp.com/fec_filings/#{fec_filing.original_filing}/#{fec_filing.filing_id}", :target => "_blank") if fec_filing.is_amendment %></td>
     <td><%= build_link(fec_filing, 'a') %></td>
     <td><%= build_link(fec_filing, 'b') %></td>
   </tr>
