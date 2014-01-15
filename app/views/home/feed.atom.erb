@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	>
+
+  <channel>
+    <title>FEC Electronic Filings</title>
+    <atom:link href="http://itemizer.herokuapp.com/feed" rel="self" type="application/rss+xml" />
+    <link>http://itemizer.herokuapp.com/</link>
+    <description>Electronic campaign finance filings filed today</description>
+    <copyright>There is no copyright here.</copyright>
+    <webMaster>dwillis@gmail.com (Derek Willis)</webMaster>
+    <pubDate><%= DateTime.now.strftime("%a, %d %b %Y %H:%M:%S %z") %></pubDate>
+    <% @fec_filings.each do |fec_filing| -%>
+      <item>
+         <title><%= fec_filing.committee_name %>: <%= fec_filing.report_title %></title>
+         <link><%= fec_filing.fec_uri %></link>
+         <description><%= fec_filing.form_type %> <%= fec_filing.date_coverage_to.to_s if fec_filing.date_coverage_to %></description>
+         <pubDate><%= DateTime.now.strftime("%a, %d %b %Y %H:%M:%S %z") %></pubDate>
+         <guid isPermaLink="true"><%= fec_filing.fec_uri %></guid>
+      </item>
+    <% end -%>
+  </channel>
+</rss>
