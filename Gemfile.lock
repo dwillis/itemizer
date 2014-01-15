@@ -39,7 +39,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     fastercsv (1.5.5)
-    fech (1.6.0)
+    fech (1.6.1)
       ensure-encoding
       fastercsv
       people
@@ -116,7 +116,7 @@ DEPENDENCIES
   american_date
   bootstrap-sass
   campaign_cash (~> 2.6.2)
-  fech (= 1.6.0)
+  fech (= 1.6.1)
   jquery-rails
   jquery-tablesorter
   pg
