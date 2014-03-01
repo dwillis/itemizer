@@ -1,3 +1,8 @@
+
+<% unless @filing.rows_like(/h4/).empty? %>
+  <p>Scroll down to see Schedule H4 expenditures</p>
+<% end %>
+
 <table class="table table-striped tablesorter-blue">
   <thead>
     <tr>
@@ -26,3 +31,34 @@
   <% end %>
   </tbody>
 </table>
+
+<% unless @filing.rows_like(/h4/).empty? %>
+  <table class="table table-striped tablesorter-blue">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Form type</th>
+        <th>Entity type</th>
+        <th>Payee name</th>
+        <th>Payee state</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @filing.rows_like(/h4/).each do |item| %>
+      <tr>
+        <td id="<%= item[:transaction_id_number] %>"><a href="#<%= item[:transaction_id_number] %>">#</a></td>
+        <td><%= item[:form_type] %></td>
+        <td><%= item[:entity_type] %></td>
+        <td><%= display_payee(item) %></td>
+        <td><%= item[:payee_state] %></td>
+        <td><%= display_date(item[:expenditure_date]) %></td>
+        <td><%= number_with_delimiter(item[:total_amount]) %></td>
+        <td><%= item[:expenditure_purpose_descrip] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
