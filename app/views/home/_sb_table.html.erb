@@ -1,8 +1,4 @@
 
-<% unless @filing.rows_like(/h4/).empty? %>
-  <p>Scroll down to see Schedule H4 expenditures</p>
-<% end %>
-
 <table class="table table-striped tablesorter-blue">
   <thead>
     <tr>
@@ -33,6 +29,7 @@
 </table>
 
 <% unless @filing.rows_like(/h4/).empty? %>
+  <h4>Schedule H4 transactions - Joint federal/non-federal</h4>
   <table class="table table-striped tablesorter-blue">
     <thead>
       <tr>
@@ -56,7 +53,7 @@
         <td><%= item[:payee_state] %></td>
         <td><%= display_date(item[:expenditure_date]) %></td>
         <td><%= number_with_delimiter(item[:total_amount]) %></td>
-        <td><%= item[:expenditure_purpose_descrip] %></td>
+        <td><%= item[:expenditure_purpose_description] %></td>
       </tr>
     <% end %>
     </tbody>
