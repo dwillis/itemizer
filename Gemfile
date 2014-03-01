@@ -1,7 +1,7 @@
-ruby '1.9.3'
+ruby '2.0.0'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 gem 'campaign_cash', "~> 2.6.2"
 gem 'fech'
 gem 'american_date'
