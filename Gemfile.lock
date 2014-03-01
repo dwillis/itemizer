@@ -116,7 +116,7 @@ DEPENDENCIES
   american_date
   bootstrap-sass
   campaign_cash (~> 2.6.2)
-  fech
+  fech (= 1.6.3)
   jquery-rails
   jquery-tablesorter
   pg

@@ -19,6 +19,11 @@ class HomeController < ApplicationController
     @filing_id = params[:id]
     @filing = Fech::Filing.new(@filing_id, :csv_parser => Fech::CsvDoctor)
     @filing.download
+    begin
+      @name = @filing.summary.committee_name 
+    rescue
+      @name = @filing.summary.organization_name
+    end
     @sked = params[:sked]
     @line = params[:line].to_s
     @itemizations = @filing.rows_like(Regexp.new(@sked + @line))
