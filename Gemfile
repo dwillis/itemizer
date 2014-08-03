@@ -1,9 +1,9 @@
 ruby '2.0.0'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
-gem 'campaign_cash', "~> 2.6.2"
-gem 'fech', "1.6.4"
+gem 'rails', '3.2.19'
+gem 'campaign_cash', "~> 2.6.1"
+gem 'fech'
 gem 'american_date'
 gem 'bootstrap-sass'
 gem 'simple_form'
