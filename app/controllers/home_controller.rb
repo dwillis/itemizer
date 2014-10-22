@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
 
+  caches_action :show
+
   def index
     @fec_filings = Filing.today
     @today = Date.today
