@@ -12,9 +12,6 @@ class HomeController < ApplicationController
   def form_types
     @form_type = params[:id].upcase
     @fec_filings = Filing.by_type(2014, params[:id])
-    @today = Date.today
-    @yesterday = @today - 1
-    @tomorrow = @today + 1
   end
 
   def date
