@@ -11,6 +11,9 @@ class HomeController < ApplicationController
 
   def form_types
     @fec_filings = Filing.by_type(2014, params[:id])
+    @today = Date.today
+    @yesterday = @today - 1
+    @tomorrow = @today + 1
     render :template => "home/index"
   end
 
