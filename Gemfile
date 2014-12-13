@@ -1,8 +1,8 @@
-ruby '1.9.3'
+ruby '2.0.0'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
-gem 'campaign_cash', "~> 2.6.2"
+gem 'rails', '3.2.19'
+gem 'campaign_cash', "~> 2.6.1"
 gem 'fech'
 gem 'american_date'
 gem 'bootstrap-sass'

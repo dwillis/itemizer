@@ -1,4 +1,4 @@
-<h2>Itemizations for filing <%= link_to @filing_id, "http://query.nictusa.com/cgi-bin/dcdev/forms/#{@filing.summary.filer_committee_id_number}/#{@filing_id}/", :target => "_blank" %> by <%= @filing.summary.committee_name %></h2>
+<h2>Itemizations for filing <%= link_to @filing_id, "http://query.nictusa.com/cgi-bin/dcdev/forms/#{@filing.summary.filer_committee_id_number}/#{@filing_id}/", :target => "_blank" %> by <%= @name %></h2>
 Number of itemizations on this schedule: <%= @itemizations.length %>
 
 <%= render :partial => "#{@sked}_table", :locals => {:itemizations => @itemizations} %>
