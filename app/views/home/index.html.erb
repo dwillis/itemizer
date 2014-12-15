@@ -20,7 +20,7 @@
   <tr>
     <td><%= fec_filing.committee_name %> (<%= fec_filing.committee %>)</td>
     <td><%= link_to fec_filing.report_title, fec_filing.fec_uri, :target => "_blank" %></td>
-    <td><%= fec_filing.form_type %></td>
+    <td><%= link_to(fec_filing.form_type, form_types_path(fec_filing.form_type)) %></td>
     <td><%= fec_filing.date_coverage_to %></td>
     <td><%= link_to("compare", "http://comparinator.herokuapp.com/fec_filings/#{fec_filing.original_filing}/#{fec_filing.filing_id}", :target => "_blank") if fec_filing.is_amendment %></td>
     <td><%= build_link(fec_filing, 'a') %></td>
@@ -34,7 +34,7 @@
 <button id="install">
   Install on Firefox OS home screen
 </button>
- 
+
 <script>
 (function(){
   function install(ev) {
