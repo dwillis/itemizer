@@ -33,7 +33,7 @@ GEM
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
     builder (3.0.4)
-    campaign_cash (2.6.2)
+    campaign_cash (2.7.2)
       json
     ensure-encoding (0.1)
     erubis (2.7.0)
@@ -115,7 +115,7 @@ PLATFORMS
 DEPENDENCIES
   american_date
   bootstrap-sass
-  campaign_cash (~> 2.6.1)
+  campaign_cash (~> 2.7.2)
   fech
   jquery-rails
   jquery-tablesorter
